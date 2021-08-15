@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,5 @@ Route::get('/', [AuthController::class,'index'])->name('login');
 Route::post('/login',[AuthController::class,'login'])->name('post.login');
 Route::get('/register',[AuthController::class,'pelanggan'])->name('register.pelanggan');
 Route::get('/pendaftaran-selesai',[AuthController::class,'konfirmasi'])->name('konfirmasi');
+Route::get('/verify/{token}',[AuthController::class,'verify'])->name('verify');
 ROute::get('/logout',[AuthController::class,'logout'])->name('logout');

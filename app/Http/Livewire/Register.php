@@ -3,8 +3,12 @@
 namespace App\Http\Livewire;
 
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
+use App\Mail\Verification;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Auth\Events\Registered;
 
 class Register extends Component
 {
@@ -51,15 +55,26 @@ class Register extends Component
 
     public function submit()
     {
+        $activation_token = hash_hmac('sha256',Str::random(40),config('app.key'));
+        
         $rules = collect($this->validationRules)->collapse()->toArray();
         $this->validate($rules);
 
-        User::create([
+        $user = User::create([
             'name' => $this->name,
             'email' => $this->email,
             'no_hp' => $this->phone,
             'password' => Hash::make($this->password),
+            'token' => $activation_token
         ]);
+
+        $data = [
+            'name' => $this->name,
+            'email' => $this->email,
+            'token' => $activation_token
+        ];
+
+        Mail::to($user->email)->send(new Verification($data));
 
         $this->reset();
         $this->resetValidation();

@@ -2,6 +2,12 @@
 
 @section('title','Login')
 @section('content')
+@if (session('success'))
+    <div class="alert alert-success">{{ session('success') }}</div>
+@endif
+@if (session('danger'))
+    <div class="alert alert-danger">{{ session('danger') }}</div>
+@endif
 <div class="row">
     <div class="col-sm-8 col-md-8 col-lg-8 mx-auto">
         <div class="card border-primary-ijigo">
