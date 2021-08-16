@@ -24,6 +24,12 @@
   font-weight: bold;
 }
 
+.btn-orange {
+  background: #ffa800;
+  color: #ffffff;
+  font-weight: bold;
+}
+
 .btn-white {
   background: #ffffff;
   border: 1px solid #000000;
