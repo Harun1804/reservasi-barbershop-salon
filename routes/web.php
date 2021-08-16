@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Http\Controllers\Pelanggan\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +21,11 @@ Route::get('/register',[AuthController::class,'pelanggan'])->name('register.pela
 Route::get('/pendaftaran-selesai',[AuthController::class,'konfirmasi'])->name('konfirmasi');
 Route::get('/verify/{token}',[AuthController::class,'verify'])->name('verify');
 ROute::get('/logout',[AuthController::class,'logout'])->name('logout');
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::prefix('pelanggan')->name('pelanggan.')->group(function(){
+        Route::get('home',[HomeController::class,'index'])->name('home');
+        Route::get('waiting-list',[HomeController::class,'waitingList'])->name('waiting.list');
+        Route::get('history',[HomeController::class,'history'])->name('history');
+    });
+});

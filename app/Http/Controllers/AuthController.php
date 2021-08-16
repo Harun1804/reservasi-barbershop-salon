@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\CekRole;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +16,11 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        dd($request->all());
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+            return CekRole::cek(Auth::user()->role);
+        }else{
+            return redirect()->back()->with('danger','Gagal Login Cek Kembali Username dan Password Anda');
+        }
     }
 
     public function pelanggan()
