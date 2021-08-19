@@ -41,7 +41,7 @@
                     </a>
                 </div>
                 <div class="col-md-12 my-4 text-center">
-                    <a href="#" class="link-dark px-5 py-2">
+                    <a href="{{ route('register.mitra') }}" class="link-dark px-5 py-2">
                         Register sebagai mitra
                     </a>
                 </div>

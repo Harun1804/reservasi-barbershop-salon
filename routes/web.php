@@ -17,7 +17,8 @@ use App\Http\Controllers\Pelanggan\HomeController;
 
 Route::get('/', [AuthController::class,'index'])->name('login');
 Route::post('/login',[AuthController::class,'login'])->name('post.login');
-Route::get('/register',[AuthController::class,'pelanggan'])->name('register.pelanggan');
+Route::get('/register-pelanggan',[AuthController::class,'pelanggan'])->name('register.pelanggan');
+Route::get('/register-mitra',[AuthController::class,'mitra'])->name('register.mitra');
 Route::get('/pendaftaran-selesai',[AuthController::class,'konfirmasi'])->name('konfirmasi');
 Route::get('/verify/{token}',[AuthController::class,'verify'])->name('verify');
 ROute::get('/logout',[AuthController::class,'logout'])->name('logout');

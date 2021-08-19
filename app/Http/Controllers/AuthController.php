@@ -28,6 +28,11 @@ class AuthController extends Controller
         return view('auth.pelanggan');
     }
 
+    public function mitra()
+    {
+        return view('auth.mitra');
+    }
+
     public function konfirmasi()
     {
         return view('auth.confirmation');

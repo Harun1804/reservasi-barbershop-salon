@@ -3,16 +3,20 @@
 namespace App\Http\Livewire;
 
 use App\Models\User;
+use App\Models\Mitra as Mmitra;
 use Livewire\Component;
 use App\Mail\Verification;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Auth\Events\Registered;
+use Livewire\WithFileUploads;
 
-class Register extends Component
+class Mitra extends Component
 {
+    use WithFileUploads;
+
     public $email,$password,$confirmPassword,$name,$phone;
+    public $namaMitra,$alamat,$deskripsi,$jenisMitra,$thumbnail;
 
     public $currentPage = 1;
 
@@ -23,6 +27,9 @@ class Register extends Component
         2 => [
             'heading' => 'Biodata'
         ],
+        3 => [
+            'heading' => 'Info Toko'
+        ]
     ];
 
     private $validationRules = [
@@ -34,7 +41,14 @@ class Register extends Component
         2 => [
             'name' => ['required','string'],
             'phone' => ['required','numeric']
-        ]
+        ],
+        3 => [
+            'namaMitra' => ['required','string'],
+            'alamat' => ['required','string'],
+            'deskripsi' => ['nullable'],
+            'jenisMitra' => ['required','in:salon,barbershop'],
+            'thumbnail' => ['required','image','mimes:jpg,png,jpeg,bmp','max:2048']
+        ],
     ];
 
     public function updated($propertyName)
@@ -65,7 +79,19 @@ class Register extends Component
             'email' => $this->email,
             'no_hp' => $this->phone,
             'password' => Hash::make($this->password),
-            'token' => $activation_token
+            'token' => $activation_token,
+            'role' => 'mitra'
+        ]);
+
+        $this->thumbnail->store('assets/profile/toko');
+
+        Mmitra::create([
+            'nama_mitra' => $this->namaMitra,
+            'alamat' => $this->alamat,
+            'deskripsi' => $this->deskripsi,
+            'jenis_mitra' => $this->jenisMitra,
+            'thumbnail' => $this->thumbnail,
+            'user_id' => $user->id,
         ]);
 
         $data = [
@@ -82,9 +108,9 @@ class Register extends Component
         session()->flash('success','Pendaftaran Berhasil');
         return redirect()->route('konfirmasi');
     }
-
+    
     public function render()
     {
-        return view('livewire.register');
+        return view('livewire.mitra');
     }
 }

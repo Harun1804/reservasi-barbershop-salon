@@ -2,5 +2,5 @@
 
 @section('title','Registrasi')
 @section('content')
-<livewire:pelanggan />
+<livewire:mitra />
 @endsection
