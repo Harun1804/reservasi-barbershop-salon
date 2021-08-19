@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Mitra\MitraController;
 use App\Http\Controllers\Pelanggan\HomeController;
 
 /*
@@ -28,5 +29,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('home',[HomeController::class,'index'])->name('home');
         Route::get('waiting-list',[HomeController::class,'waitingList'])->name('waiting.list');
         Route::get('history',[HomeController::class,'history'])->name('history');
+        Route::get('daftar/{toko}',[HomeController::class,'daftar'])->name('daftar.toko');
+    });
+
+    Route::prefix('mitra')->name('mitra.')->group(function(){
+        Route::get('home',[MitraController::class,'index'])->name('home');
+        Route::get('layanan', [MitraController::class,'layanan'])->name('layanan.index');
     });
 });

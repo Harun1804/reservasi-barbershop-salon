@@ -83,14 +83,19 @@ class Mitra extends Component
             'role' => 'mitra'
         ]);
 
-        $this->thumbnail->store('assets/profile/toko');
+        $randomName = Str::random(10);
+        $avatar = $this->thumbnail;
+        $fileName = $randomName.'.'.$avatar->getClientOriginalExtension();
+
+        $fullname = $avatar->storeAs('assets/profile/toko',$fileName,'public');
+        
 
         Mmitra::create([
             'nama_mitra' => $this->namaMitra,
             'alamat' => $this->alamat,
             'deskripsi' => $this->deskripsi,
             'jenis_mitra' => $this->jenisMitra,
-            'thumbnail' => $this->thumbnail,
+            'thumbnail' => $fullname,
             'user_id' => $user->id,
         ]);
 

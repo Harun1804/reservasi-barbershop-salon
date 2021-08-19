@@ -1,4 +1,4 @@
-@extends('layouts.pelanggan')
+@extends('layouts.master')
 
 @section('title','History')
 

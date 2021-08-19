@@ -1,4 +1,4 @@
-@extends('layouts.pelanggan')
+@extends('layouts.master')
 
 @section('title','Home Pelanggan')
 
@@ -27,7 +27,7 @@
             <div class="col-sm-2 col-md-2 col-lg-2 mt-4 pt-4">
                 <div class="card rounded">
                     <div class="card-body">
-                        <a href="#">
+                        <a href="{{ route('pelanggan.daftar.toko','barbershop') }}">
                             <img src="{{ asset('assets/icons/babershop.png') }}" alt="barbershop logo" width="100" />
                         </a>
                     </div>
@@ -37,7 +37,7 @@
             <div class="col-sm-2 col-md-2 col-lg-2 mt-4 pt-4">
                 <div class="card rounded">
                     <div class="card-body">
-                        <a href="#">
+                        <a href="{{ route('pelanggan.daftar.toko','salon') }}">
                             <img src="{{ asset('assets/icons/salon.png') }}" alt="salon logo" width="100" />
                         </a>
                     </div>

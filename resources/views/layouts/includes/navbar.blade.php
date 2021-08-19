@@ -9,15 +9,31 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item mx-5">
-                    <a class="nav-link {{ Request::segment(2) == 'home' ? 'text-white' : 'text-dark' }} h5" aria-current="page" href="{{ route('pelanggan.home') }}">Home</a>
-                </li>
-                <li class="nav-item mx-5">
-                    <a class="nav-link {{ Request::segment(2) == 'waiting-list' ? 'text-white' : 'text-dark' }} h5" href="{{ route('pelanggan.waiting.list') }}">Waiting List</a>
-                </li>
-                <li class="nav-item mx-5">
-                    <a class="nav-link {{ Request::segment(2) == 'history' ? 'text-white' : 'text-dark' }} h5" href="{{ route('pelanggan.history') }}">History</a>
-                </li>
+                @if (auth()->user()->role == 'pelanggan')                    
+                    <li class="nav-item mx-5">
+                        <a class="nav-link {{ Request::segment(2) == 'home' ? 'text-white' : 'text-dark' }} h5" aria-current="page" href="{{ route('pelanggan.home') }}">Home</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link {{ Request::segment(2) == 'waiting-list' ? 'text-white' : 'text-dark' }} h5" href="{{ route('pelanggan.waiting.list') }}">Waiting List</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link {{ Request::segment(2) == 'history' ? 'text-white' : 'text-dark' }} h5" href="{{ route('pelanggan.history') }}">History</a>
+                    </li>
+                @endif
+                @if (auth()->user()->role == 'mitra')                    
+                    <li class="nav-item mx-5">
+                        <a class="nav-link {{ Request::segment(2) == 'home' ? 'text-white' : 'text-dark' }} h5" aria-current="page" href="{{ route('mitra.home') }}">Home</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link {{ Request::segment(2) == 'layanan' ? 'text-white' : 'text-dark' }} h5" href="{{ route('mitra.layanan.index') }}">Layanan</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link {{ Request::segment(2) == 'waiting-list' ? 'text-white' : 'text-dark' }} h5" href="#">Waiting List</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link {{ Request::segment(2) == 'history' ? 'text-white' : 'text-dark' }} h5" href="#">History</a>
+                    </li>
+                @endif
                 <li class="nav-item mx-5">
                     <a href="{{ route('logout') }}">
                         <i class="bi bi-person-circle" style="font-size: 1.8rem"></i>

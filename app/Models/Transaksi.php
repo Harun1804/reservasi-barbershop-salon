@@ -6,27 +6,22 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Mitra extends Model
+class Transaksi extends Model
 {
     use HasFactory;
 
-    protected $table = 'mitra';
+    protected $table = 'transaksi';
+    protected $with = 'user';
     protected $fillable = [
-        'nama_mitra',
-        'alamat',
-        'deskripsi',
-        'jenis_mitra',
-        'thumbnail',
         'user_id',
+        'tanggal_pesan',
+        'jam_pesan',
+        'total_harga_pemesanan',
+        'status'
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    public function getThumbnailAttribute($value)
-    {
-        return url('storage/'.$value);
     }
 }

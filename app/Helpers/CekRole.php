@@ -9,7 +9,7 @@ class CekRole
         if ($role === 'pelanggan') {
             return redirect()->route('pelanggan.home');
         }else{
-            return "Halaman Mitra";
+            return redirect()->route('mitra.home');
         }
     }
 }
