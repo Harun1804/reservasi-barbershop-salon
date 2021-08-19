@@ -14,6 +14,6 @@ class MitraController extends Controller
 
     public function layanan()
     {
-        return view('mitra.layanan.index');
+        return view('mitra.layanan');
     }
 }

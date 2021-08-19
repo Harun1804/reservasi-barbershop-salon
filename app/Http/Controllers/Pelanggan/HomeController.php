@@ -28,4 +28,10 @@ class HomeController extends Controller
         $mitra = Mitra::where('jenis_mitra',$toko)->get();
         return view('pelanggan.daftarToko',compact('mitra'));
     }
+
+    public function detailToko($toko,$id)
+    {
+        $mitra = Mitra::find($id);
+        return view('pelanggan.detailToko',compact('mitra'));
+    }
 }

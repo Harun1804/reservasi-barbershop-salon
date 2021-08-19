@@ -29,4 +29,9 @@ class Mitra extends Model
     {
         return url('storage/'.$value);
     }
+
+    public function katalog()
+    {
+        return $this->hasMany(Katalog::class);
+    }
 }

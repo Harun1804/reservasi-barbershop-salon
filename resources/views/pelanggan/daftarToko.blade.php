@@ -17,7 +17,7 @@
                         <p class="card-text">{{ Str::limit($m->deskripsi, 25, '...') }}</p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Lihat Detail Toko</a>
+                        <a href="{{ route('pelanggan.detail.toko',['barbershop',$m->id]) }}" class="btn btn-primary">Lihat Detail Toko</a>
                     </div>
                 </div>
             </div>

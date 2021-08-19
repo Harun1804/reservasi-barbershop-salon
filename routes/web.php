@@ -30,6 +30,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('waiting-list',[HomeController::class,'waitingList'])->name('waiting.list');
         Route::get('history',[HomeController::class,'history'])->name('history');
         Route::get('daftar/{toko}',[HomeController::class,'daftar'])->name('daftar.toko');
+        Route::get('detail/{toko}/{id}',[HomeController::class,'detailToko'])->name('detail.toko');
     });
 
     Route::prefix('mitra')->name('mitra.')->group(function(){
