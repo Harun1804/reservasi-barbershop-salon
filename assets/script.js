@@ -60,3 +60,80 @@ document.getElementById("see-password").addEventListener("click", () => {
     document.getElementById("password").setAttribute("type", "password");
   }
 });
+
+// Mitra account page
+function addLayanan() {
+  const layananTersedia = document.getElementById("layanan-tersedia");
+
+  const addLayanan = document.querySelector(".add-layanan");
+
+  const div = document.createElement("div");
+  div.classList.add("input-group");
+  div.classList.add("my-3");
+
+  const inputLayanan = document.createElement("input");
+  inputLayanan.type = "text";
+  inputLayanan.name = "layanan[]";
+  inputLayanan.classList.add("form-control");
+  inputLayanan.classList.add("me-2");
+
+  const spanRp = document.createElement("span");
+  spanRp.classList.add("input-group-text");
+  spanRp.classList.add("ms-2");
+  spanRp.innerText = "Rp";
+
+  const hargaLayanan = document.createElement("input");
+  hargaLayanan.type = "number";
+  hargaLayanan.name = "harga-layanan[]";
+  hargaLayanan.classList.add("form-control");
+  hargaLayanan.classList.add("me-2");
+
+  const buttonDelete = document.createElement("button");
+  buttonDelete.classList.add("btn");
+  buttonDelete.classList.add("btn-outline-dark");
+  buttonDelete.type = "button";
+  buttonDelete.onclick = "deleteLayanan()";
+
+  const spanDelete = document.createElement("span");
+  spanDelete.classList.add("bi");
+  spanDelete.classList.add("bi-x-lg");
+
+  buttonDelete.append(spanDelete);
+
+  div.append(inputLayanan, spanRp, hargaLayanan, buttonDelete);
+
+  layananTersedia.insertBefore(div, addLayanan);
+}
+
+function editLayanan() {
+  const btnEdit = document.getElementById("edit-layanan");
+  const btnSave = document.getElementById("save-layanan");
+  const forms = document.querySelectorAll(".form-control");
+  forms.forEach((elem) => {
+    elem.disabled = false;
+  });
+
+  const layanan = document.querySelector(".add-layanan");
+  layanan.classList.remove("d-none");
+  btnEdit.classList.add("d-none");
+  btnSave.classList.remove("d-none");
+}
+
+function saveLayanan() {
+  const btnEdit = document.getElementById("edit-layanan");
+  const btnSave = document.getElementById("save-layanan");
+  const forms = document.querySelectorAll(".form-control");
+  forms.forEach((elem) => {
+    elem.disabled = true;
+  });
+
+  const layanan = document.querySelector(".add-layanan");
+  layanan.classList.add("d-none");
+  btnEdit.classList.remove("d-none");
+  btnSave.classList.add("d-none");
+}
+
+function deleteLayanan(event) {
+  // console.log(event);
+  event.target.parentElement.parentElement.remove();
+}

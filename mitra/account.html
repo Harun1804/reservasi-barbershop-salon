@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ijigo | Account</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-primary-ijigo">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="home.html">
+            <img src="../assets/icons/ijigo.png" alt="logo ijigo" width="80" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item mx-5">
+                <a
+                  class="nav-link text-dark h5"
+                  aria-current="page"
+                  href="home.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link text-dark h5" href="waiting-list.html"
+                  >Waiting List</a
+                >
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link text-dark h5" href="history.html">History</a>
+              </li>
+              <li class="nav-item mx-5">
+                <a href="account.html" class="link-dark">
+                  <i class="bi bi-person-circle" style="font-size: 1.8rem"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <img
+                class="d-block mx-auto mt-4"
+                src="../assets/icons/dummy-profile.png"
+                alt="profile picture"
+                width="100"
+              />
+              <h2 class="fw-bold text-center mt-2">Nama Barbershop/Salon</h2>
+            </div>
+          </div>
+          <form id="form-layanan">
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12 my-2">
+                <label class="h5" for="alamat">Alamat Toko</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="alamat"
+                  id="alamat"
+                  value="Jl. Aspal Kota Medan"
+                  disabled="true"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12 my-2">
+                <label class="h5" for="deskripsi">Deskripsi Toko</label>
+
+                <input
+                  class="form-control"
+                  type="text"
+                  name="deskripsi"
+                  id="deskripsi"
+                  value="Deskripsi Toko"
+                  disabled="true"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-8 col-lg-8 mt-4" id="layanan-tersedia">
+                <p class="h5">Layanan Tersedia</p>
+                <div class="input-group my-3">
+                  <input
+                    class="form-control me-2"
+                    type="text"
+                    name="layanan[]"
+                    value="Pangkas Biasa"
+                    disabled="true"
+                  />
+                  <span class="input-group-text ms-2">Rp</span>
+                  <input
+                    class="form-control me-2"
+                    type="number"
+                    name="harga-layanan[]"
+                    value="10000"
+                    disabled="true"
+                  />
+                  <button
+                    type="button"
+                    class="btn btn-outline-dark"
+                    onclick="deleteLayanan(event)"
+                  >
+                    <i class="bi bi-x-lg"></i>
+                  </button>
+                </div>
+                <div class="input-group my-3">
+                  <input
+                    class="form-control me-2"
+                    type="text"
+                    name="layanan[]"
+                    value="Pangkas Biasa dan Cukur Janggut"
+                    disabled="true"
+                  />
+                  <span class="input-group-text ms-2">Rp</span>
+                  <input
+                    class="form-control me-2"
+                    type="number"
+                    name="harga-layanan[]"
+                    value="20000"
+                    disabled="true"
+                  />
+                  <button
+                    type="button"
+                    class="btn btn-outline-dark"
+                    onclick="deleteLayanan(event)"
+                  >
+                    <i class="bi bi-x-lg"></i>
+                  </button>
+                </div>
+                <div class="input-group my-3 d-none add-layanan">
+                  <button
+                    type="button"
+                    class="btn btn-outline-dark"
+                    onclick="addLayanan()"
+                  >
+                    <i class="bi bi-plus-circle"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <button
+                  id="edit-layanan"
+                  type="button"
+                  class="btn btn-orange"
+                  onclick="editLayanan()"
+                >
+                  Edit
+                </button>
+                <button
+                  id="save-layanan"
+                  type="submit"
+                  class="btn btn-orange d-none my-2"
+                  onclick="saveLayanan()"
+                >
+                  Save
+                </button>
+              </div>
+          </form>
+              <div class="col-sm-6 col-md-6 col-lg-6 text-end">
+                <a href="#" class="btn btn-orange my-2">Logout</a>
+              </div>
+            </div>
+        </div>
+      </section>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/script.js"></script>
+  </body>
+</html>
