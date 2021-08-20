@@ -2,6 +2,10 @@
 
 @section('title','Detail Toko')
 
+@section('css-vendor')
+    @livewireStyles
+@endsection
+
 @section('content')
     <section>
         <div class="container">
@@ -21,18 +25,15 @@
                     </div>
                 </div>
                 <div class="col-md-12">
-                    @forelse ($mitra->katalog as $katalog)
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    {{ $katalog->nama_model }}
-                                </label>
-                            </div>
-                    @empty
-                        <p>Belum Ada Data</p>
-                    @endforelse
+                    <hr>
+                    @livewire('transaksi', ['mitra' => $mitra])
+                    
                 </div>
             </div>
         </div>
     </section>
+@endsection
+
+@section('js-vendor')
+    @livewireScripts
 @endsection

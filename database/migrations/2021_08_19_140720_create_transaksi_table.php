@@ -16,10 +16,10 @@ class CreateTransaksiTable extends Migration
         Schema::create('transaksi', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
-            $table->date('tanggal_pesan');
-            $table->time('jam_pesan');
+            $table->date('tanggal_pesan')->nullable();
+            $table->time('jam_pesan')->nullable();
             $table->string('total_harga_pemesanan')->default(0);
-            $table->enum('status',['menunggu','selesai']);
+            $table->enum('status',['awal','menunggu','selesai']);
             $table->timestamps();
         });
     }
