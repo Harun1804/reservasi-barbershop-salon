@@ -5,6 +5,11 @@
 @section('content')
 <section>
     <div class="container">
+        @if (session('success'))
+        <div class="alert alert-info mt-5" style="text-align: center">
+            {{ session('success') }}
+        </div>
+        @endif
         @forelse ($transaksi as $tr)
         @if ($tr->pesanan()->katalog->mitra_id == $userID)            
             <div class="row">
@@ -22,6 +27,13 @@
                     @endforeach
                     </p>
                     <h4 class="fw-bold my-3">Rp. {{ number_format($tr->total_harga_pemesanan,2,',','.') }}</h4>
+                </div>
+                <div class="col-sm-12 col-md-10 col-lg-10">
+                    <form action="{{ route('mitra.update.status',$tr->id) }}" method="post">
+                        @csrf
+                        @method('put')
+                        <button type="submit" class="btn btn-warning">Selesai</button>
+                    </form>
                 </div>
             </div>
         @endif

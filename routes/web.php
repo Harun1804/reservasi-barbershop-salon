@@ -37,6 +37,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('home',[MitraController::class,'index'])->name('home');
         Route::get('layanan', [MitraController::class,'layanan'])->name('layanan.index');
         Route::get('waiting-list',[MitraController::class,'waitingList'])->name('waiting.list');
+        Route::put('update-status/{id}',[MitraController::class,'update'])->name('update.status');
         Route::get('history',[MitraController::class,'history'])->name('history');
     });
 });

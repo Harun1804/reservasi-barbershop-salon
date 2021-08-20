@@ -29,6 +29,14 @@ class MitraController extends Controller
         return view('mitra.waiting_list',compact(['userID','transaksi']));
     }
 
+    public function update($id)
+    {
+        $transaksi = Transaksi::find($id);
+        $transaksi->update(['status' => 'selesai']);
+
+        return redirect()->back()->with('success','Pesanan Selesai');
+    }
+
     public function history()
     {
         $userID = Auth::user()->mitra->id;
