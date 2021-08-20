@@ -8,7 +8,7 @@
         
                 <li class="list-group-item">Tanggal : {{ $tanggal }}</li>
                 <li class="list-group-item">Waktu : {{ $jam }}</li>
-                <li class="list-group-item">Total : Rp. {{ collect($c['katalog_harga'] * $c['jumlah'])->sum() }}</li>
+                <li class="list-group-item">Total : Rp. {{ $total }}</li>
             </ul>
             <button type="button" class="btn btn-primary mt-3" wire:click="submit">Booking</button>
         </div>

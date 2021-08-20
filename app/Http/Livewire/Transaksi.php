@@ -10,7 +10,7 @@ use Livewire\Component;
 
 class Transaksi extends Component
 {
-    public $mitra,$tanggal,$jam,$name;
+    public $mitra,$tanggal,$jam,$name,$total;
     public $layanan = [];
     public $cart = [];
     public $reviewMode = false;
@@ -27,8 +27,10 @@ class Transaksi extends Component
     public function review()
     {
         $this->reviewMode = true;
+        $this->total = 0;
         foreach ($this->cart as $c) {
             $name = Katalog::select('nama_model','id')->where('id',$c['katalog_id'])->first();
+            $this->total += $c['jumlah'] * $c['katalog_harga'];
             $this->name = $name;
         }
     }
