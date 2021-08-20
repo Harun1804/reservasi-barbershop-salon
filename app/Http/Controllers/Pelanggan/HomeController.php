@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Pelanggan;
 
 use App\Http\Controllers\Controller;
 use App\Models\Mitra;
+use App\Models\Transaksi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -15,12 +17,16 @@ class HomeController extends Controller
 
     public function waitingList()
     {
-        return view('pelanggan.waitingList');
+        $id = Auth::id();
+        $transaksi = Transaksi::where('user_id',$id)->where('status','menunggu')->get();
+        return view('pelanggan.waitingList',compact('transaksi'));
     }
 
     public function history()
     {
-        return view('pelanggan.history');
+        $id = Auth::id();
+        $transaksi = Transaksi::where('user_id',$id)->where('status','selesai')->get();
+        return view('pelanggan.history',compact('transaksi'));
     }
 
     public function daftar($toko)

@@ -36,5 +36,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::prefix('mitra')->name('mitra.')->group(function(){
         Route::get('home',[MitraController::class,'index'])->name('home');
         Route::get('layanan', [MitraController::class,'layanan'])->name('layanan.index');
+        Route::get('waiting-list',[MitraController::class,'waitingList'])->name('waiting.list');
+        Route::get('history',[MitraController::class,'history'])->name('history');
     });
 });

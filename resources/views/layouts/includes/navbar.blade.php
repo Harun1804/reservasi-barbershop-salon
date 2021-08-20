@@ -28,10 +28,10 @@
                         <a class="nav-link {{ Request::segment(2) == 'layanan' ? 'text-white' : 'text-dark' }} h5" href="{{ route('mitra.layanan.index') }}">Layanan</a>
                     </li>
                     <li class="nav-item mx-5">
-                        <a class="nav-link {{ Request::segment(2) == 'waiting-list' ? 'text-white' : 'text-dark' }} h5" href="#">Waiting List</a>
+                        <a class="nav-link {{ Request::segment(2) == 'waiting-list' ? 'text-white' : 'text-dark' }} h5" href="{{ route('mitra.waiting.list') }}">Waiting List</a>
                     </li>
                     <li class="nav-item mx-5">
-                        <a class="nav-link {{ Request::segment(2) == 'history' ? 'text-white' : 'text-dark' }} h5" href="#">History</a>
+                        <a class="nav-link {{ Request::segment(2) == 'history' ? 'text-white' : 'text-dark' }} h5" href="{{ route('mitra.history') }}">History</a>
                     </li>
                 @endif
                 <li class="nav-item mx-5">
