@@ -19,7 +19,7 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-primary-ijigo">
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary-ijigo">
         <div class="container-fluid">
           <a class="navbar-brand" href="home.html">
             <img src="../assets/icons/ijigo.png" alt="logo ijigo" width="80" />
@@ -68,105 +68,125 @@
     </header>
     <main>
       <section>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12">
-              <img
-                class="d-block mx-auto mt-4"
-                src="../assets/icons/dummy-profile.png"
-                alt="profile picture"
-                width="100"
-              />
-              <h2 class="fw-bold text-center mt-2">Nama Pelanggan</h2>
+        <form>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <img
+                  class="d-block mx-auto mt-4"
+                  src="../assets/icons/dummy-profile.png"
+                  alt="profile picture"
+                  width="100"
+                />
+                <h2 class="fw-bold text-center mt-2">Nama Pelanggan</h2>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12 col-md-3 col-lg-3 my-2">
-              <p class="h5">
-                Nomor Telepon
-                <button class="btn" id="edit-telepon" onclick="editTelepon()">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button
-                  class="btn d-none"
-                  id="save-telepon"
-                  onclick="saveTelepon()"
-                >
-                  <i class="bi bi-check-lg"></i>
-                </button>
-              </p>
+            <div class="row">
+              <div class="col-sm-12 col-md-3 col-lg-3 my-2">
+                <p class="h5">
+                  Nomor Telepon
+                  <button
+                    type="button"
+                    class="btn"
+                    id="edit-telepon"
+                    onclick="editTelepon()"
+                  >
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button
+                    type="submit"
+                    class="btn d-none"
+                    id="save-telepon"
+                    onclick="saveTelepon()"
+                  >
+                    <i class="bi bi-check-lg"></i>
+                  </button>
+                </p>
 
-              <input
-                class="form-control"
-                type="number"
-                name="telepon"
-                id="telepon"
-                value="08123456789"
-                disabled="true"
-              />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12 col-md-3 col-lg-3 my-2">
-              <p class="h5">
-                Email
-                <button class="btn" id="edit-email" onclick="editEmail()">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button
-                  class="btn d-none"
-                  id="save-email"
-                  onclick="saveEmail()"
-                >
-                  <i class="bi bi-check-lg"></i>
-                </button>
-              </p>
-              <input
-                class="form-control"
-                type="email"
-                name="email"
-                id="email"
-                value="mail@example.com"
-                disabled
-              />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12 col-md-3 col-lg-3 my-2">
-              <p class="h5">
-                Password
-                <button class="btn" id="edit-password" onclick="editPassword()">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button
-                  class="btn d-none"
-                  id="save-password"
-                  onclick="savePassword()"
-                >
-                  <i class="bi bi-check-lg"></i>
-                </button>
-              </p>
-              <div class="input-group">
                 <input
                   class="form-control"
-                  type="password"
-                  name="password"
-                  id="password"
-                  value="password"
+                  type="number"
+                  name="telepon"
+                  id="telepon"
+                  value="08123456789"
+                  disabled="true"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-3 col-lg-3 my-2">
+                <p class="h5">
+                  Email
+                  <button
+                    type="button"
+                    class="btn"
+                    id="edit-email"
+                    onclick="editEmail()"
+                  >
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button
+                    type="submit"
+                    class="btn d-none"
+                    id="save-email"
+                    onclick="saveEmail()"
+                  >
+                    <i class="bi bi-check-lg"></i>
+                  </button>
+                </p>
+                <input
+                  class="form-control"
+                  type="email"
+                  name="email"
+                  id="email"
+                  value="mail@example.com"
                   disabled
                 />
-                <span class="input-group-text" id="see-password">
-                  <i class="bi bi-eye" id="password-icon"></i>
-                </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-3 col-lg-3 my-2">
+                <p class="h5">
+                  Password
+                  <button
+                    type="button"
+                    class="btn"
+                    id="edit-password"
+                    onclick="editPassword()"
+                  >
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button
+                    type="submit"
+                    class="btn d-none"
+                    id="save-password"
+                    onclick="savePassword()"
+                  >
+                    <i class="bi bi-check-lg"></i>
+                  </button>
+                </p>
+                <div class="input-group">
+                  <input
+                    class="form-control"
+                    type="password"
+                    name="password"
+                    id="password"
+                    value="password"
+                    disabled
+                  />
+                  <span class="input-group-text" id="see-password">
+                    <i class="bi bi-eye" id="password-icon"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-end">
+              <div class="col-sm-12 col-md-2 col-lg-2 my-2">
+                <a href="login.html" class="btn btn-orange">Logout</a>
               </div>
             </div>
           </div>
-          <div class="row justify-content-end">
-            <div class="col-sm-12 col-md-2 col-lg-2 my-2">
-              <a href="login.html" class="btn btn-orange">Logout</a>
-            </div>
-          </div>
-        </div>
+        </form>
       </section>
     </main>
     <script

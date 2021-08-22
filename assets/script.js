@@ -67,9 +67,18 @@ function addLayanan() {
 
   const addLayanan = document.querySelector(".add-layanan");
 
-  const div = document.createElement("div");
-  div.classList.add("input-group");
-  div.classList.add("my-3");
+  const divRow = document.createElement("div");
+  divRow.classList.add("row");
+  divRow.classList.add("my-3");
+
+  const divCol8 = document.createElement("div");
+  divCol8.classList.add("col-sm-8");
+
+  const divCol4 = document.createElement("div");
+  divCol4.classList.add("col-sm-4");
+
+  const divInputGroup = document.createElement("div");
+  divInputGroup.classList.add("input-group");
 
   const inputLayanan = document.createElement("input");
   inputLayanan.type = "text";
@@ -79,7 +88,6 @@ function addLayanan() {
 
   const spanRp = document.createElement("span");
   spanRp.classList.add("input-group-text");
-  spanRp.classList.add("ms-2");
   spanRp.innerText = "Rp";
 
   const hargaLayanan = document.createElement("input");
@@ -99,10 +107,11 @@ function addLayanan() {
   spanDelete.classList.add("bi-x-lg");
 
   buttonDelete.append(spanDelete);
-
-  div.append(inputLayanan, spanRp, hargaLayanan, buttonDelete);
-
-  layananTersedia.insertBefore(div, addLayanan);
+  divInputGroup.append(spanRp, hargaLayanan, buttonDelete);
+  divCol4.append(divInputGroup);
+  divCol8.append(inputLayanan);
+  divRow.append(divCol8, divCol4);
+  layananTersedia.insertBefore(divRow, addLayanan);
 }
 
 function editLayanan() {
@@ -134,6 +143,5 @@ function saveLayanan() {
 }
 
 function deleteLayanan(event) {
-  // console.log(event);
-  event.target.parentElement.parentElement.remove();
+  console.log(event.target.parentElement.parentElement.parentElement);
 }
