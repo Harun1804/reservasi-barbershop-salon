@@ -43,6 +43,7 @@ class Transaksi extends Component
             'user_id' => $userID,
             'tanggal_pesan' => $this->tanggal,
             'jam_pesan' => $this->jam,
+            'total_harga_pemesanan' => $this->total,
             'status' => 'menunggu'
         ]);
 
