@@ -32,7 +32,7 @@
         @empty
             <div class="row">
                 <div class="col-sm-12 mt-5">
-                    <div class="alert alert-info mt-5" style="text-align: center">Belum Ada History</div>
+                    <div class="alert alert-info mt-5" style="text-align: center">Anda tidak memiliki jadwal pangkas rambut</div>
                 </div>
             </div>
         @endforelse

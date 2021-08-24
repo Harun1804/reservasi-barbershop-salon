@@ -26,10 +26,10 @@
                             name="password" required autocomplete="off" />
                     </div>
                     <div class="col-md-6 text-center">
-                        <a href="{{ route('register.pelanggan') }}" class="btn btn-register px-5 py-2">Register</a>
+                        <a href="{{ route('register.pelanggan') }}" class="btn btn-register my-1 py-2">Register</a>
                     </div>
                     <div class="col-md-6 text-center">
-                        <button type="submit" class="btn btn-login px-5 py-2">
+                        <button type="submit" class="btn btn-login my-1 py-2">
                             Login
                         </button>
                     </div>
@@ -41,7 +41,7 @@
                     </a>
                 </div>
                 <div class="col-md-12 my-4 text-center">
-                    <a href="{{ route('register.mitra') }}" class="link-dark px-5 py-2">
+                    <a href="{{ route('register.mitra') }}" class="link-dark">
                         Register sebagai mitra
                     </a>
                 </div>

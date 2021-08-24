@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-primary-ijigo">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary-ijigo">
     <div class="container-fluid">
         <a class="navbar-brand" href="home.html">
             <img src="{{ asset('assets/icons/ijigo.png') }}" alt="logo ijigo" width="80" />
@@ -35,7 +35,7 @@
                     </li>
                 @endif
                 <li class="nav-item mx-5">
-                    <a href="{{ route('logout') }}">
+                    <a href="{{ route('logout') }}" class="link-dark">
                         <i class="bi bi-person-circle" style="font-size: 1.8rem"></i>
                     </a>
                 </li>

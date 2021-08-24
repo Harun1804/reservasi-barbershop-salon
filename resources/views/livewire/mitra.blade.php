@@ -126,8 +126,8 @@
                     </div>
                 </form>
 
-                <div class="col-md-12 my-4 text-center">
-                    <a href="{{ route('login') }}" class="link-dark px-5 py-2">
+                <div class="col-md-12 my-4">
+                    <a href="{{ route('login') }}" class="link-dark">
                         Kembali ke halaman login
                     </a>
                 </div>
