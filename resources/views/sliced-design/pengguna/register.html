@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ijigo | Register</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-light bg-primary-ijigo">
+        <div class="container">
+          <a class="navbar-brand mx-auto" href="#">
+            <img src="../assets/icons/ijigo.png" alt="logo ijigo" width="100" />
+          </a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="container my-5 py-5">
+        <div class="row">
+          <div class="col-sm-8 col-md-8 col-lg-8 mx-auto">
+            <div class="card border-primary-ijigo">
+              <div class="card-body mx-5">
+                <h1 class="card-title text-center">Register</h1>
+                <form action="" class="row">
+                  <div class="col-md-12 mb-4 active">
+                    <label for="email" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control rounded-pill"
+                      id="user-email"
+                      name="email"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-12 mb-4 active">
+                    <label for="password" class="form-label">Password</label>
+                    <input
+                      type="password"
+                      class="form-control rounded-pill"
+                      id="user-password"
+                      name="password"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-12 mb-4 active">
+                    <label for="password" class="form-label"
+                      >Confirm Password</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control rounded-pill"
+                      id="confirm-password"
+                      name="confirm-password"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-12 mb-4 tabs">
+                    <label for="email" class="form-label">Nama</label>
+                    <input
+                      type="text"
+                      class="form-control rounded-pill"
+                      id="user-name"
+                      name="name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-12 mb-4 tabs">
+                    <label for="password" class="form-label"
+                      >No Handphone</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control rounded-pill"
+                      id="user-phone"
+                      name="phone"
+                      required
+                    />
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4 text-center active">
+                      <button
+                        type="button"
+                        id="continue"
+                        class="btn btn-register px-5 py-2"
+                        onclick="showTab()"
+                      >
+                        Continue
+                      </button>
+                    </div>
+                    <div class="col-md-4 text-center active">
+                      <p class="text-muted my-2">Or login with</p>
+                    </div>
+                    <div class="col-md-4 text-center active">
+                      <a href="#" class="btn btn-white px-5 py-2">
+                        <img
+                          src="../assets/icons/google-logo.png"
+                          alt="login with google button"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="row justify-content-end">
+                    <div class="col-md-4">
+                      <!--
+                        Sementara pakai yang a, kalau sudah dengan backend hapus yang a, pakai button ini
+                        <button
+                        type="submit"
+                        class="btn btn-register px-5 py-2 tabs"
+                      >
+                        Register
+                      </button> -->
+                      <a
+                        href="confirmation.html"
+                        class="btn btn-register px-5 py-2 tabs"
+                      >
+                        Register
+                      </a>
+                    </div>
+                  </div>
+                </form>
+                <div class="col-md-12 my-4 text-center">
+                  <a href="login.html" class="link-dark">
+                    Kembali ke halaman login
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/script.js"></script>
+  </body>
+</html>

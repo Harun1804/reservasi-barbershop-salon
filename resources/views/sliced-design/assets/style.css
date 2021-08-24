@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Quicksand", Arial, Helvetica, sans-serif;
+}
+
+.bg-primary-ijigo {
+  background: #00c2ff;
+}
+
+.border-primary-ijigo {
+  border: 1px solid #00c2ff;
+}
+
+.btn-register {
+  background: #ffa800;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.btn-login {
+  background: #00c2ff;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.btn-orange {
+  background: #ffa800;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.btn-white {
+  background: #ffffff;
+  border: 1px solid #000000;
+}
+
+.link-dark {
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.active {
+  display: block;
+}
+
+.tabs {
+  display: none;
+}

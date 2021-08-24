@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ijigo | Home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary-ijigo">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="home.html">
+            <img src="../assets/icons/ijigo.png" alt="logo ijigo" width="80" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item mx-5">
+                <a
+                  class="nav-link text-white h5"
+                  aria-current="page"
+                  href="home.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link text-dark h5" href="waiting-list.html"
+                  >Waiting List</a
+                >
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link text-dark h5" href="history.html">History</a>
+              </li>
+              <li class="nav-item mx-5">
+                <a href="account.html" class="link-dark">
+                  <i class="bi bi-person-circle" style="font-size: 1.8rem"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 mt-3">
+              <form action="" class="row g-3">
+                <div class="col-auto">
+                  <i class="bi bi-geo-alt" style="font-size: 1.5rem"></i>
+                </div>
+                <div class="col-auto">
+                  <select
+                    name="lokasi"
+                    id="lokasi"
+                    class="form-select"
+                    aria-label="Pilih lokasi"
+                  >
+                    <option value="Medan" selected disabled>Medan</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="row g-5 justify-content-center text-center mt-5 pt-2">
+            <div class="col-sm-2 col-md-2 col-lg-2 mt-4 pt-4">
+              <div class="card rounded">
+                <div class="card-body">
+                  <a href="#">
+                    <img
+                      src="../assets/icons/babershop.png"
+                      alt="barbershop logo"
+                      width="100"
+                    />
+                  </a>
+                </div>
+              </div>
+              <p class="h6 mt-3">Barbershop</p>
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2 mt-4 pt-4">
+              <div class="card rounded">
+                <div class="card-body">
+                  <a href="#">
+                    <img
+                      src="../assets/icons/salon.png"
+                      alt="salon logo"
+                      width="100"
+                    />
+                  </a>
+                </div>
+              </div>
+              <p class="h6 mt-3">Salon</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
