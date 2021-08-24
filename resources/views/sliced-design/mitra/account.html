@@ -19,7 +19,7 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-primary-ijigo">
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary-ijigo">
         <div class="container-fluid">
           <a class="navbar-brand" href="home.html">
             <img src="../assets/icons/ijigo.png" alt="logo ijigo" width="80" />
@@ -111,53 +111,65 @@
             <div class="row">
               <div class="col-sm-12 col-md-8 col-lg-8 mt-4" id="layanan-tersedia">
                 <p class="h5">Layanan Tersedia</p>
-                <div class="input-group my-3">
-                  <input
-                    class="form-control me-2"
+                <div class="row row-cols-lg-auto g-3 align-items-center">
+                  <div class="col-6 col-md-8 col-lg-8">
+                    <input
+                    class="form-control"
                     type="text"
                     name="layanan[]"
                     value="Pangkas Biasa"
                     disabled="true"
-                  />
-                  <span class="input-group-text ms-2">Rp</span>
-                  <input
-                    class="form-control me-2"
-                    type="number"
-                    name="harga-layanan[]"
-                    value="10000"
-                    disabled="true"
-                  />
-                  <button
-                    type="button"
-                    class="btn btn-outline-dark"
-                    onclick="deleteLayanan(event)"
-                  >
-                    <i class="bi bi-x-lg"></i>
-                  </button>
+                    />
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-4">
+                    <div class="input-group">
+                      <span class="input-group-text">Rp</span>
+                      <input
+                        class="form-control me-2"
+                        type="number"
+                        name="harga-layanan[]"
+                        value="10000"
+                        disabled="true"
+                      />
+                      <button
+                        type="button"
+                        class="btn btn-outline-dark"
+                        onclick="deleteLayanan(event)"
+                      >
+                        <i class="bi bi-x-lg"></i>
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <div class="input-group my-3">
-                  <input
-                    class="form-control me-2"
+                <div class="row row-cols-lg-auto g-3 align-items-center">
+                  <div class="col-6 col-md-8 col-lg-8">
+                    <input
+                    class="form-control"
                     type="text"
                     name="layanan[]"
                     value="Pangkas Biasa dan Cukur Janggut"
                     disabled="true"
-                  />
-                  <span class="input-group-text ms-2">Rp</span>
-                  <input
-                    class="form-control me-2"
-                    type="number"
-                    name="harga-layanan[]"
-                    value="20000"
-                    disabled="true"
-                  />
-                  <button
-                    type="button"
-                    class="btn btn-outline-dark"
-                    onclick="deleteLayanan(event)"
-                  >
-                    <i class="bi bi-x-lg"></i>
-                  </button>
+                    />
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-4">
+                    <div class="input-group">
+                      <span class="input-group-text">Rp</span>
+                      <input
+                        class="form-control me-2"
+                        type="number"
+                        name="harga-layanan[]"
+                        value="20000"
+                        disabled="true"
+                      />
+                      <button
+                        type="button"
+                        class="btn btn-outline-dark"
+                        onclick="deleteLayanan(event)"
+                      >
+                        <i class="bi bi-x-lg"></i>
+                      </button>
+                    </div>
+                  </div>
                 </div>
                 <div class="input-group my-3 d-none add-layanan">
                   <button
@@ -170,7 +182,7 @@
                 </div>
               </div>
             </div>
-            <div class="row">
+            <div class="row g-3">
               <div class="col-sm-6 col-md-6 col-lg-6">
                 <button
                   id="edit-layanan"
