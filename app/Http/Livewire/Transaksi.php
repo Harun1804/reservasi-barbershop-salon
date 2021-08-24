@@ -56,7 +56,6 @@ class Transaksi extends Component
             ]);
         }
 
-
         return redirect()->route('pelanggan.waiting.list');
     }
     

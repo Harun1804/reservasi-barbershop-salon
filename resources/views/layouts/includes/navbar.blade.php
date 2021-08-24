@@ -35,7 +35,7 @@
                     </li>
                 @endif
                 <li class="nav-item mx-5">
-                    <a href="{{ route('logout') }}" class="link-dark">
+                    <a href="{{ route('account') }}" class="link-dark">
                         <i class="bi bi-person-circle" style="font-size: 1.8rem"></i>
                     </a>
                 </li>
