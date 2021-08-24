@@ -23,8 +23,8 @@
 </section>
 <section>
     <div class="container">
-        <div class="row g-5 justify-content-center text-center mt-5 pt-2">
-            <div class="col-sm-2 col-md-2 col-lg-2 mt-4 pt-4">
+        <div class="row justify-content-center text-center mt-5 pt-2">
+            <div class="col-sm-6 col-md-6 col-lg-3 mt-4 pt-4">
                 <div class="card rounded">
                     <div class="card-body">
                         <a href="{{ route('pelanggan.daftar.toko','barbershop') }}">
@@ -34,7 +34,7 @@
                 </div>
                 <p class="h6 mt-3">Barbershop</p>
             </div>
-            <div class="col-sm-2 col-md-2 col-lg-2 mt-4 pt-4">
+            <div class="col-sm-6 col-md-6 col-lg-3 mt-4 pt-4">
                 <div class="card rounded">
                     <div class="card-body">
                         <a href="{{ route('pelanggan.daftar.toko','salon') }}">
