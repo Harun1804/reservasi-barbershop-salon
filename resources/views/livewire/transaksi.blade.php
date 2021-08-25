@@ -8,7 +8,7 @@
         
                 <li class="list-group-item">Tanggal : {{ $tanggal }}</li>
                 <li class="list-group-item">Waktu : {{ $jam }}</li>
-                <li class="list-group-item">Total : Rp. {{ $total }}</li>
+                <li class="list-group-item">Total : Rp. {{ number_format($total,2,',','.') }}</li>
             </ul>
             <button type="button" class="btn btn-primary mt-3" wire:click="submit">Booking</button>
         </div>
@@ -23,12 +23,12 @@
                 </div>
                 <div class="col-8">
                     <label class="form-check-label">
-                        {{ $katalog->nama_model }} (Rp. {{ $katalog->harga }})
+                        {{ $katalog->nama_model }} (Rp. {{ number_format($katalog->harga,2,',','.') }})
                     </label>
                 </div>
                 <div class="col-3">
                     @if (in_array($katalog->id,$layanan))
-                        <input type="number" class="text-center" wire:change="updateQty({{ $katalog->id }}, {{ $katalog->harga }}, $event.target.value)" value="0" style="width: 100%; margin:auto;">
+                        <input type="number" class="text-center" wire:change="updateQty({{ $katalog->id }}, {{ $katalog->harga }}, $event.target.value)" value="1" style="width: 100%; margin:auto;">
                     @endif
                 </div>
             </div>

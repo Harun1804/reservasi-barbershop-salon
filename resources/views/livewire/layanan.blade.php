@@ -38,7 +38,7 @@
                                     <button wire:click="destroy({{$katalog->id}})" class="btn btn-sm btn-outline-danger py-0">Delete</button>
                                 </td>
                                 <td>{{ $katalog->nama_model }}</td>
-                                <td>{{ $katalog->harga }}</td>
+                                <td>Rp. {{ number_format($katalog->harga,2,',','.') }}</td>
                             </tr>
                         @empty
                             <tr>

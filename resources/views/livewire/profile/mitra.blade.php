@@ -15,13 +15,13 @@
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12 my-2">
             <label class="h5" for="alamat">Alamat Toko</label>
-            <input class="form-control" type="text" name="alamat" id="alamat" wire:model="alamat" disabled />
+            <textarea wire:model="alamat" class="form-control" rows="3" disabled></textarea>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12 my-2">
             <label class="h5" for="deskripsi">Deskripsi Toko</label>
-            <input class="form-control" type="text" name="deskripsi" id="deskripsi" wire:model="deskripsi" disabled />
+            <textarea wire:model="deskripsi" class="form-control" disabled rows="5"></textarea>
         </div>
     </div>
 
@@ -54,13 +54,13 @@
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 my-2">
                 <label class="h5" for="alamat">Alamat Toko</label>
-                <input class="form-control" type="text" name="alamat" id="alamat" wire:model="alamat" />
+                <textarea wire:model="alamat" class="form-control" rows="3"></textarea>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 my-2">
                 <label class="h5" for="deskripsi">Deskripsi Toko</label>
-                <input class="form-control" type="text" name="deskripsi" id="deskripsi" wire:model="deskripsi" />
+                <textarea wire:model="deskripsi" class="form-control" rows="3"></textarea>
             </div>
         </div>
         <div class="row">

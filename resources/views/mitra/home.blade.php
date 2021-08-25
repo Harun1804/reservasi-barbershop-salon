@@ -16,16 +16,14 @@
             <div class="col-sm-12 col-md-12 col-lg-12 my-2">
                 <label class="h5" for="alamat">Alamat Toko</label>
 
-                <input class="form-control" type="text" name="alamat" id="alamat" value="{{ $mitra->alamat }}"
-                    disabled="true" />
+                <textarea class="form-control" rows="3" disabled>{{ $mitra->alamat }}</textarea>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 my-2">
                 <label class="h5" for="deskripsi">Deskripsi Toko</label>
 
-                <input class="form-control" type="text" name="deskripsi" id="deskripsi" value="{{ $mitra->alamat }}"
-                    disabled="true" />
+                <textarea class="form-control" disabled rows="3">{{ $mitra->deskripsi }}</textarea>
             </div>
         </div>
         <div class="row">
@@ -36,7 +34,7 @@
                     <input class="form-control me-5" type="text" name="layanan1" id="layanan{{ $loop->index }}" value="{{ $kg->nama_model }}"
                         disabled="true" />
                     <span class="input-group-text">Rp</span>
-                    <input class="form-control" type="number" name="harga-layanan1" id="harga-layanan{{ $loop->index }}" value="{{ $kg->harga }}"
+                    <input class="form-control" type="number" name="harga-layanan1" id="harga-layanan{{ $loop->index }}" value="{{ number_format($kg->harga,',','.') }}"
                         disabled="true" />
                 </div>
                 @endforeach

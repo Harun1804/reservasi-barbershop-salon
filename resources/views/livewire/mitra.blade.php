@@ -65,8 +65,8 @@
                         </div>
 
                         <div class="col-md-12 mb-4">
-                            <label for="deskripsi" class="form-label">Deskripsi</label>
-                            <textarea class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" rows="3" required wire:model="deskripsi" autocomplete="off"></textarea>
+                            <label for="editor" class="form-label">Deskripsi</label>
+                            <textarea class="form-control @error('deskripsi') is-invalid @enderror" id="editor" rows="3" required wire:model="deskripsi" autocomplete="off"></textarea>
                             @error('deskripsi')
                                 <small style="color: red">{{ $message }}</small>
                             @enderror
