@@ -1,9 +1,26 @@
 <div class="row">
-    <div class="col-sm-12 col-md-12 col-lg-12">
-        <img class="d-block mx-auto mt-4" src="{{ asset('assets/icons/dummy-profile.png') }}" alt="profile picture"
-            width="100" />
-        <h2 class="fw-bold text-center mt-2">{{ auth()->user()->name }}</h2>
+    @if ($editimage)
+    <div class="col-sm-12">
+        <form wire:submit.prevent="save" class="d-block mx-auto mt-4">
+            @if ($image)
+                Photo Review
+                <img src="{{ $image->temporaryUrl() }}">
+            @endif
+            <input type="file" wire:model="image" accept="image/*">
+            @error('image') <span class="error">{{ $message }}</span> @enderror
+            <button type="submit" class="btn btn-info btn-sm">Ubah</button>
+        </form>
     </div>
+    @else        
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <img class="d-block mx-auto mt-4" src="{{ url(auth()->user()->profile) }}" alt="profile picture"
+                width="100" />
+            <h2 class="fw-bold text-center mt-2">{{ auth()->user()->name }}</h2>
+        </div>
+        <div class="col-sm-12">
+            <button type="button" class="btn btn-sm btn-warning d-block mx-auto mt-4" wire:click="editImage">Edit</button>
+        </div>
+    @endif
     @if (session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif

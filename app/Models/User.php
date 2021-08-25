@@ -17,7 +17,8 @@ class User extends Authenticatable
         'password',
         'no_hp',
         'role',
-        'token'
+        'token',
+        'profile'
     ];
 
     protected $hidden = [
@@ -32,5 +33,10 @@ class User extends Authenticatable
     public function mitra()
     {
         return $this->hasOne(Mitra::class);
+    }
+
+    public function getProfileAttribute($value)
+    {
+        return url('storage/'.$value);
     }
 }

@@ -3,16 +3,21 @@
 namespace App\Http\Livewire\Profile;
 
 use App\Models\User;
+use Livewire\Component;
+use Illuminate\Support\Str;
+use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Livewire\Component;
 
 class Pelanggan extends Component
 {
-    public $nohp,$email,$password,$userid;
+    use WithFileUploads;
+
+    public $nohp,$email,$password,$userid,$image;
     public $editnohp = false;
     public $editemail = false;
     public $editpassword = false;
+    public $editimage = false;
 
     public function editPhone()
     {
@@ -27,6 +32,11 @@ class Pelanggan extends Component
     public function editPassword()
     {
         $this->editpassword = true;
+    }
+
+    public function editImage()
+    {
+        $this->editimage = true;
     }
 
     public function changePhone()
@@ -47,6 +57,29 @@ class Pelanggan extends Component
     {
         User::find($this->userid)->update(['password' => Hash::make($this->password)]);
         $this->editpassword = false;
+        session()->flash('success','Data Berhasil Diubah');
+    }
+
+    public function updatedImage()
+    {
+        $this->validate([
+            'image' => 'image|max:2048'
+        ]);
+    }
+
+    public function save()
+    {
+        $randomName = Str::random(10);
+        $avatar = $this->image;
+        $fileName = $randomName.'.'.$avatar->getClientOriginalExtension();
+
+        $fullname = $avatar->storeAs('assets/profile/pengguna',$fileName,'public');
+
+        User::find($this->userid)->update([
+            'profile' => $fullname
+        ]);
+
+        $this->editimage = false;
         session()->flash('success','Data Berhasil Diubah');
     }
 

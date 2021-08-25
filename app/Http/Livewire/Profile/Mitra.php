@@ -2,13 +2,17 @@
 
 namespace App\Http\Livewire\Profile;
 
-use App\Models\Mitra as modelMitra;
 use Livewire\Component;
+use Illuminate\Support\Str;
+use Livewire\WithFileUploads;
+use App\Models\Mitra as modelMitra;
 use Illuminate\Support\Facades\Auth;
 
 class Mitra extends Component
 {
-    public $alamat,$deskripsi,$mitraID;
+    use WithFileUploads;
+
+    public $alamat,$deskripsi,$mitraID,$image;
     public $editmode = false;
 
     public function edit()
@@ -18,10 +22,24 @@ class Mitra extends Component
 
     public function simpan()
     {
-        modelMitra::find($this->mitraID)->update([
-            'alamat' => $this->alamat,
-            'deskripsi' => $this->deskripsi
-        ]);
+        if ($this->image) {
+            $randomName = Str::random(10);
+            $avatar = $this->image;
+            $fileName = $randomName.'.'.$avatar->getClientOriginalExtension();
+    
+            $fullname = $avatar->storeAs('assets/profile/toko',$fileName,'public');
+    
+            modelMitra::find($this->mitraID)->update([
+                'alamat' => $this->alamat,
+                'deskripsi' => $this->deskripsi,
+                'thumbnail' => $fullname
+            ]);
+        }else{
+            modelMitra::find($this->mitraID)->update([
+                'alamat' => $this->alamat,
+                'deskripsi' => $this->deskripsi
+            ]);
+        }
 
         $this->editmode = false;
 
