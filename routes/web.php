@@ -18,6 +18,8 @@ use App\Http\Controllers\Pelanggan\HomeController;
 
 Route::get('/', [AuthController::class,'index'])->name('login');
 Route::post('/login',[AuthController::class,'login'])->name('post.login');
+Route::get('/auth/redirect', [AuthController::class,'redirectToProvider'])->name('google.redirect');
+Route::get('/auth/callback', [AuthController::class,'handleProviderCallback'])->name('google.callback');
 Route::get('/register-pelanggan',[AuthController::class,'pelanggan'])->name('register.pelanggan');
 Route::get('/register-mitra',[AuthController::class,'mitra'])->name('register.mitra');
 Route::get('/pendaftaran-selesai',[AuthController::class,'konfirmasi'])->name('konfirmasi');

@@ -36,7 +36,7 @@
                 </form>
                 <div class="col-md-12 my-4 text-center">
                     <p class="text-muted">Or login with</p>
-                    <a href="#" class="btn btn-white px-5 py-2">
+                    <a href="{{ route('google.redirect') }}" class="btn btn-white px-5 py-2">
                         <img src="{{ asset('assets/icons/google-logo.png') }}" alt="login with google button" />
                     </a>
                 </div>
