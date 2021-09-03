@@ -19,3 +19,4 @@ jobs:
         server: ftp.ijigo.xyz
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
+        exclude: public/
