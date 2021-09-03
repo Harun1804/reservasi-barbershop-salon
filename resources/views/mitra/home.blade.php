@@ -34,7 +34,7 @@
                     <input class="form-control me-5" type="text" name="layanan1" id="layanan{{ $loop->index }}" value="{{ $kg->nama_model }}"
                         disabled="true" />
                     <span class="input-group-text">Rp</span>
-                    <input class="form-control" type="number" name="harga-layanan1" id="harga-layanan{{ $loop->index }}" value="{{ number_format($kg->harga,',','.') }}"
+                    <input class="form-control" type="text" name="harga-layanan1" id="harga-layanan{{ $loop->index }}" value="{{ number_format($kg->harga,2,',','.') }}"
                         disabled="true" />
                 </div>
                 @endforeach
