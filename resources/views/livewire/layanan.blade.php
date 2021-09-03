@@ -35,7 +35,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>
                                     <button wire:click="edit({{$katalog->id}})" class="btn btn-sm btn-outline-warning py-0">Edit</button> | 
-                                    <button wire:click="destroy({{$katalog->id}})" class="btn btn-sm btn-outline-danger py-0">Delete</button>
+                                    <button wire:click="destroy({{$katalog->id}})" class="btn btn-sm btn-outline-danger py-0" onclick="return confirm('Yakin')">Delete</button>
                                 </td>
                                 <td>{{ $katalog->nama_model }}</td>
                                 <td>Rp. {{ number_format($katalog->harga,2,',','.') }}</td>

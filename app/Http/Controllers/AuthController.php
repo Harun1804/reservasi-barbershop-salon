@@ -97,6 +97,18 @@ class AuthController extends Controller
         return view('auth.profile');
     }
 
+    public function hapusAkun(Request $request)
+    {
+        $user = User::find(Auth::id());
+        $user->delete();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login')->with('success','Akun Telah Dihapus');
+    }
+
     public function logout(Request $request)
     {
         Auth::logout();

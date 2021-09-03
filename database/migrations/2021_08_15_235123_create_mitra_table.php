@@ -20,7 +20,7 @@ class CreateMitraTable extends Migration
             $table->text('deskripsi')->nullable();
             $table->enum('jenis_mitra',['salon','barbershop']);
             $table->string('thumbnail',255)->nullable();
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKatalogTable extends Migration
+class CreateSosmedsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateKatalogTable extends Migration
      */
     public function up()
     {
-        Schema::create('katalog', function (Blueprint $table) {
+        Schema::create('sosmed', function (Blueprint $table) {
             $table->id();
             $table->foreignId('mitra_id')->constrained('mitra')->onDelete('cascade');
-            $table->string('nama_model',255);
-            $table->string('harga',50);
+            $table->string('akun',50);
+            $table->enum('jenis',['facebook','instagram','whatsapp','telegram','twitter']);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateKatalogTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('katalog');
+        Schema::dropIfExists('sosmed');
     }
 }

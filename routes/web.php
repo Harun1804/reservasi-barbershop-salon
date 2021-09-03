@@ -24,7 +24,6 @@ Route::get('/register-pelanggan',[AuthController::class,'pelanggan'])->name('reg
 Route::get('/register-mitra',[AuthController::class,'mitra'])->name('register.mitra');
 Route::get('/pendaftaran-selesai',[AuthController::class,'konfirmasi'])->name('konfirmasi');
 Route::get('/verify/{token}',[AuthController::class,'verify'])->name('verify');
-Route::get('account',[AuthController::class,'account'])->name('account');
 ROute::get('/logout',[AuthController::class,'logout'])->name('logout');
 
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -43,4 +42,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::put('update-status/{id}',[MitraController::class,'update'])->name('update.status');
         Route::get('history',[MitraController::class,'history'])->name('history');
     });
+
+    Route::get('account',[AuthController::class,'account'])->name('account');
+    Route::delete('account-delete',[AuthController::class,'hapusAkun'])->name('hapus.account');
 });

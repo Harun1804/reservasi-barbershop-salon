@@ -14,8 +14,15 @@
         @else
         <livewire:profile.mitra />
         @endif
-        <div class="row justify-content-end">
-            <div class="col-sm-12 col-md-2 col-lg-2 my-2">
+        <div class="row">
+            <div class="col-sm-6 my-2 justify-content-start">
+                <form action="{{ route('hapus.account') }}" method="post">
+                    @csrf
+                    @method('delete')
+                    <button class="btn btn-danger" onclick="return confirm('Yakin')" type="submit">Hapus Akun</button>
+                </form>
+            </div>
+            <div class="col-sm-6 col-md-2 col-lg-2 my-2 justify-content-end">
                 <a href="{{ route('logout') }}" class="btn btn-warning">Logout</a>
             </div>
         </div>

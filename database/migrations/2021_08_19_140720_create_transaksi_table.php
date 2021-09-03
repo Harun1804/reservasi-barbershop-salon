@@ -15,7 +15,7 @@ class CreateTransaksiTable extends Migration
     {
         Schema::create('transaksi', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->date('tanggal_pesan')->nullable();
             $table->time('jam_pesan')->nullable();
             $table->string('total_harga_pemesanan')->default(0);

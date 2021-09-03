@@ -29,12 +29,12 @@
         <div class="row">
             <div class="col-sm-12 col-md-8 col-lg-8 mt-4">
                 <p class="h5">Layanan Tersedia</p>
-                @foreach ($mitra->katalog as $kg)                    
+                @foreach ($mitra->katalog as $kg) 
                 <div class="input-group my-3">
                     <input class="form-control me-5" type="text" name="layanan1" id="layanan{{ $loop->index }}" value="{{ $kg->nama_model }}"
                         disabled="true" />
                     <span class="input-group-text">Rp</span>
-                    <input class="form-control" type="number" name="harga-layanan1" id="harga-layanan{{ $loop->index }}" value="{{ number_format($kg->harga,',','.') }}"
+                    <input class="form-control" type="text" name="harga-layanan1" id="harga-layanan{{ $loop->index }}" value="{{ number_format($kg->harga,2,',','.') }}"
                         disabled="true" />
                 </div>
                 @endforeach
